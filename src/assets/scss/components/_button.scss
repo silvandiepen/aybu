@@ -12,7 +12,8 @@
 		}
 	}
 	&:focus {
-		box-shadow: var(--shadow), 2px 2px 0 0 white;
+		box-shadow: var(--shadow), 2px 4px 0.25rem 0 black,
+			0px -4px 4px 0 rgba(0, 0, 0, 0.5) inset;
 		outline: 0;
 	}
 }
