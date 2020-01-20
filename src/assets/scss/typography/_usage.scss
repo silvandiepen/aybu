@@ -40,8 +40,8 @@ h4 {
 	@include max-(font-size, .4, 48);
 }
 h5 {
-	line-height: 1.5;
 	font-size: 1rem;
+	line-height: 1.5;
 }
 
 li,p,blockquote {
@@ -49,5 +49,5 @@ li,p,blockquote {
 	line-height: 1.5;
 }
 p:first-child{
-  font-size: 1.25rem;
+	font-size: 1.25rem;
 }
