@@ -15,7 +15,7 @@ const getters = {
 };
 
 const actions = {
-  addToBasket({ commit }, value) {
+  ADD_TO_BASKET({ commit }, value) {
     commit("ADD_TO_BASKET", value);
   }
 };

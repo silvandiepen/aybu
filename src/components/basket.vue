@@ -1,48 +1,51 @@
 <template>
-	<div class="basket">
-		<div class="basket__trigger" @click="active = !active">
-			<div
-				class="basket__amount"
-				:class="{ 'basket__amount--active': basketAmount > 0 }"
-			>
-				{{ basketAmount }}
-			</div>
-			&#10033;
-		</div>
-		<div class="basket__panel" :class="{ 'basket__panel--active': active }">
-			<ul class="basket__list">
-				<li
-					class="basket__item"
-					v-for="(char, idx) in basket"
-					:key="idx"
-					v-clipboard="char"
-					v-clipboard:success="clipboardSuccessHandler"
-				>
-					{{ char }}
-				</li>
-			</ul>
-		</div>
-	</div>
+  <div class="basket">
+    <div class="basket__trigger" @click="active = !active">
+      <div
+        class="basket__amount"
+        :class="{ 'basket__amount--active': basketAmount > 0 }"
+      >
+        {{ basketAmount }}
+      </div>
+      &#10033;
+    </div>
+    <div class="basket__panel" :class="{ 'basket__panel--active': active }">
+      <ul class="basket__list">
+        <li
+          class="basket__item"
+          v-for="(char, idx) in basket"
+          :key="idx"
+          v-clipboard="char"
+          v-clipboard:success="clipboardSuccessHandler"
+        >
+          {{ char }}
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-	data: () => ({
-		active: false
-	}),
-	computed: {
-		basket() {
-			return this.$store.state.basket.basket;
-		},
-		basketAmount() {
-			return this.$store.getters["basket/amount"];
-		}
-	},
-	methods: {
-		clipboardSuccessHandler({ value }) {
-			this.$store.dispatch("dialog/ACTIVATE", value);
-		}
-	}
+  data: () => ({
+    active: false
+  }),
+  computed: {
+    basket() {
+      return this.$store.state.basket.basket;
+    },
+    basketAmount() {
+      return this.$store.getters["basket/amount"];
+    }
+  },
+  methods: {
+    clipboardSuccessHandler({ value }) {
+      this.$store.dispatch("dialog/SET_ACTIVATE", {
+        active: true,
+        value: value
+      });
+    }
+  }
 };
 </script>
 
