@@ -11,6 +11,11 @@
 <script>
 export default {
   computed: {
+    copied: {
+      get() {
+        return this.$store.state.dialog.value;
+      }
+    },
     show: {
       get() {
         console.log("changed");

@@ -21,19 +21,12 @@
         </li>
       </ul>
     </section>
-    <div class="dialog dialog--copy" :class="{ 'dialog--active': dialogShow }">
-      Copied <span>{{ copied }}</span> to clipboard.
-    </div>
   </main>
 </template>
 <script>
 // @ is an alias to /src
 
 export default {
-  data: () => ({
-    dialogShow: false,
-    copied: null
-  }),
   computed: {
     chars() {
       return this.$store.getters["characters/GET_CHARACTERS"];

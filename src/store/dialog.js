@@ -8,13 +8,13 @@ const mutations = {
     state.active = bool;
     setTimeout(() => {
       state.active = false;
-    }, 1000);
+    }, 2000);
   },
   SET_VALUE(state, value) {
     state.value = value;
     setTimeout(() => {
       state.value = null;
-    }, 1000);
+    }, 2500);
   }
 };
 
@@ -25,7 +25,7 @@ const getters = {
 };
 
 const actions = {
-  SET_ACTIVATE({ commit }, obj) {
+  SET_ACTIVE({ commit }, obj) {
     commit("SET_ACTIVE", obj.active);
     commit("SET_VALUE", obj.value);
   }

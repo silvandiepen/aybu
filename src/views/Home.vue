@@ -23,6 +23,7 @@
       </li>
     </ul>
     <Overview></Overview>
+    <Dialog></Dialog>
   </div>
 </template>
 
@@ -33,6 +34,7 @@ export default {
   name: "home",
   components: {
     Basket: () => import("@/components/basket.vue"),
+    Dialog: () => import("@/components/dialog.vue"),
     Overview
   },
   computed: {
