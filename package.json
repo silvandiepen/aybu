@@ -8,7 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@henris/custom": "0.0.2",
     "core-js": "^3.4.4",
+    "guyn": "0.0.13",
+    "henris": "^1.2.18",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3",
